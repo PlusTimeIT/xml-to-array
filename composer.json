@@ -1,5 +1,5 @@
 {
-    "name": "plustimeit/xml-to-array",
+    "name": "plustime-it/xml-to-array",
     "description": "Easily convert valid xml to a php array.",
     "keywords": [
         "laravel",
