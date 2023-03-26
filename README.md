@@ -5,7 +5,7 @@ Easily convert valid xml to a php array.
 Install via composer:
 
 ```
-composer require mtownsend/xml-to-array
+composer require plustime-it/xml-to-array
 ```
 
 ## Quick start
@@ -13,7 +13,7 @@ composer require mtownsend/xml-to-array
 ### Using the class
 
 ```php
-use Mtownsend\XmlToArray\XmlToArray;
+use PlusTimeIT\XmlToArray\XmlToArray;
 
 $xml = <<<XML
 <?xml version="1.0"?>
@@ -75,16 +75,14 @@ Arguments are identical to ``XmlToArray::convert`` method.
 
 XML has always been a challenge to work with in PHP compared to other data formats, such as JSON. This package aims to make integrating with XML files or api requests significantly easier. With this package, you might actually like interfacing with XML in your application now.
 
-## Other packages you may be interested in
-
-- [mtownsend/collection-xml](https://github.com/mtownsend5512/collection-xml)
-- [mtownsend/request-xml](https://github.com/mtownsend5512/request-xml)
-- [mtownsend/response-xml](https://github.com/mtownsend5512/response-xml)
 
 ## Credits
 
+This package was originally created and maintained by Mark Townsend, as at 26/03/2023 there was no Laravel 9 compatibility and this update aims to fix that. 
+
 - Mark Townsend
 - Adrien aka Gaarf
+- PlusTimeIT
 - [All Contributors](../../contributors)
 
 ## Testing
