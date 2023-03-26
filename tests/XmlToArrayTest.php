@@ -4,14 +4,13 @@ use PHPUnit\Framework\TestCase;
 
 class XmlToArray extends TestCase
 {
-
     /** @test array */
     protected $testArray = [];
 
     /** @test string */
     protected $testXml;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->testArray = [
             'carrier' => 'fedex',

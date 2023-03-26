@@ -1,6 +1,5 @@
 <?php
-
-namespace Mtownsend\XmlToArray;
+namespace PlusTimeIT\XmlToArray;
 
 use DOMDocument;
 
@@ -17,23 +16,13 @@ class XmlToArray
      * @param bool $outputRoot
      * @return array
      */
-    public static function convert($xml, $outputRoot = false)
+    public static function convert($xml, $outputRoot = FALSE)
     {
         $array = self::xmlStringToArray($xml);
-        if (!$outputRoot && array_key_exists('@root', $array)) {
+        if ( ! $outputRoot && array_key_exists('@root', $array)) {
             unset($array['@root']);
         }
         return $array;
-    }
-
-    protected static function xmlStringToArray($xmlstr)
-    {
-        $doc = new DOMDocument();
-        $doc->loadXML($xmlstr);
-        $root = $doc->documentElement;
-        $output = self::domNodeToArray($root);
-        $output['@root'] = $root->tagName;
-        return $output;
     }
 
     protected static function domNodeToArray($node)
@@ -50,7 +39,7 @@ class XmlToArray
                     $v = self::domNodeToArray($child);
                     if (isset($child->tagName)) {
                         $t = $child->tagName;
-                        if (!isset($output[$t])) {
+                        if ( ! isset($output[$t])) {
                             $output[$t] = [];
                         }
                         $output[$t][] = $v;
@@ -58,7 +47,7 @@ class XmlToArray
                         $output = (string) $v;
                     }
                 }
-                if ($node->attributes->length && !is_array($output)) { // Has attributes but isn't an array
+                if ($node->attributes->length && ! is_array($output)) { // Has attributes but isn't an array
                     $output = ['@content' => $output]; // Change output into an array.
                 }
                 if (is_array($output)) {
@@ -77,6 +66,16 @@ class XmlToArray
                 }
                 break;
         }
+        return $output;
+    }
+
+    protected static function xmlStringToArray($xmlstr)
+    {
+        $doc = new DOMDocument();
+        $doc->loadXML($xmlstr);
+        $root = $doc->documentElement;
+        $output = self::domNodeToArray($root);
+        $output['@root'] = $root->tagName;
         return $output;
     }
 }

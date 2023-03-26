@@ -10,6 +10,6 @@ if (!function_exists('xml_to_array')) {
      */
     function xml_to_array($xml, $outputRoot = false)
     {
-    	return \Mtownsend\XmlToArray\XmlToArray::convert($xml, $outputRoot);
+    	return \PlusTimeIT\XmlToArray\XmlToArray::convert($xml, $outputRoot);
     }
 }

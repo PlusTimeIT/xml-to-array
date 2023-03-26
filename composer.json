@@ -1,5 +1,5 @@
 {
-    "name": "mtownsend/xml-to-array",
+    "name": "plustimeit/xml-to-array",
     "description": "Easily convert valid xml to a php array.",
     "keywords": [
         "laravel",
@@ -13,25 +13,30 @@
             "name": "Mark Townsend",
             "email": "mtownsend5512@gmail.com",
             "role": "Developer"
+        },
+        {
+            "name": "PlusTime IT",
+            "email": "kane@plustime.com.au",
+            "role": "Developer"
         }
     ],
 	"autoload": {
         "psr-4": {
-            "Mtownsend\\XmlToArray\\": "src"
+            "PlusTimeIT\\XmlToArray\\": "src"
         },
         "files": [
             "src/helpers.php"
         ]
     },
     "require": {
-        "php": "~7.0|~8.0"
+        "php": "^8.0"
     },
     "require-dev": {
-      "phpunit/phpunit": "^6.4"
+      "phpunit/phpunit": "^9.0|^10.0"
     },
     "autoload-dev": {
         "psr-4": {
-            "Mtownsend\\XmlToArray\\Test\\": "tests/"
+            "PlusTimeIT\\XmlToArray\\Test\\": "tests/"
         }
     },
     "minimum-stability": "stable"
